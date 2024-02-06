@@ -1,46 +1,41 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
-import Home from '../views/Home.vue'
-import About from '../views/About.vue'
-import Brazil from '@/views/Brazil.vue'
-import jamaica from '@/views/Jamaica.vue'
-import Hawai from '@/views/Hawai.vue'
-import Panama from '@/views/Panama.vue'
+import { createRouter, createWebHistory } from 'vue-router'
+
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: Home
+    component: ()=>import('@/views/Home.vue')
   },
   {
     path: '/about',
     name: 'about',
-    component: About
+    component: ()=>import('@/views/About.vue')
   },
   {
     path: '/brazil',
     name: 'brazil',
-    component: Brazil
+    component: ()=>import('@/views/Brazil.vue')
   },
   {
     path: '/hawai',
     name: 'hawai',
-    component: Hawai
+    component: ()=>import('@/views/Hawai.vue')
   },
   {
     path: '/jamaica',
     name: 'jamaica',
-    component: jamaica
+    component: ()=>import('@/views/Jamaica.vue')
   },
   {
     path: '/panama',
     name: 'panama',
-    component: Panama
+    component: ()=>import('@/views/Panama.vue')
   },
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes
 })
 
