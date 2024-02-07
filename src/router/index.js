@@ -1,36 +1,36 @@
 import { createRouter, createWebHistory } from 'vue-router'
-
+import Home from '@/views/Home.vue'
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: ()=>import('@/views/Home.vue')
+    component: Home
   },
   {
     path: '/about',
     name: 'about',
-    component: ()=>import('@/views/About.vue')
+    component: ()=>import(/*webpackChunkName:'About'*/'@/views/About.vue')
   },
   {
     path: '/brazil',
     name: 'brazil',
-    component: ()=>import('@/views/Brazil.vue')
+    component: ()=>import(/*webpackChunkName:'Brazil'*/'@/views/Brazil.vue')
   },
   {
     path: '/hawai',
     name: 'hawai',
-    component: ()=>import('@/views/Hawai.vue')
+    component: ()=>import(/*webpackChunkName:'Hawai'*/'@/views/Hawai.vue')
   },
   {
     path: '/jamaica',
     name: 'jamaica',
-    component: ()=>import('@/views/Jamaica.vue')
+    component: ()=>import(/*webpackChunkName:'Jamaica'*/'@/views/Jamaica.vue')
   },
   {
     path: '/panama',
     name: 'panama',
-    component: ()=>import('@/views/Panama.vue')
+    component: ()=>import(/*webpackChunkName:'Panama'*/'@/views/Panama.vue')
   },
 ]
 
