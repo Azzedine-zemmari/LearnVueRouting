@@ -20,4 +20,8 @@ const destinationId = parseInt(route.params.id);
 
 // Find the destination with the matching ID
 const destination = sourceData.destinations.find(dest => dest.id === destinationId);
+console.log(destinationId)
+console.log(sourceData.destinations.id)
+console.log(destination)
+
 </script>

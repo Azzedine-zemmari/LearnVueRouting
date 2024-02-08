@@ -1,14 +1,19 @@
 <template>
   <div id="nav">
-    <RouterLink to="/">Home</RouterLink>
-    <RouterLink to="/brazil">Brazil</RouterLink>
-    <RouterLink to="/hawai">Hawai</RouterLink>
-    <RouterLink to="/jamaica">Jamaica</RouterLink>
-    <RouterLink to="/panama">Panama</RouterLink>
+    <RouterLink 
+      v-for="destination in destinations"
+      :key="destination.id"
+      :to="{name:'destinationShow', params :{id:destination.id}}"
+      >
+      {{ destination.name }}
+      {{ console.log(route.params.id) }}
+    </RouterLink>       
   </div>
-</template>
+</template>                                         
 <script setup>
-import { RouterLink } from 'vue-router';
+import {destinations} from '@/data.json';
+import { useRoute } from 'vue-router';
+const route = useRoute()
 </script>
 <style lang="css">
     #nav .ActiveLink{
